@@ -1,12 +1,11 @@
 <template>
   <div class="home">
-    <h1>{{ msg }}</h1>
-    <p>
-      For guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank">vue-cli documentation</a>.
-    </p>
-    
+    <div>
+  <img class="robot" src="../assets/robot-home.png" aria-hidden="true"/>
+  </div>
+    <div class="get-started"> 
+      <a href=""> Get Started</a> building your first robot. 
+    </div>
   </div>
 </template>
 
@@ -21,18 +20,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.home{
+  text-align: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.robot{
+  height:300px
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+
 </style>
