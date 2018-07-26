@@ -1,10 +1,10 @@
 <template>
- <div>
+ <div class="content">
      <button class="add-to-cart" @click="addToCart()">
          Add to Cart 
      </button>
     <div class="top-row">
-      <div class="top part">
+      <div :class="[saleBorderClass, 'top', 'part']">
           <div class="robot-name">
         {{selectedRobot.head.title}}
           </div>
@@ -56,6 +56,7 @@
             </tr>
         </tbody>
     </table>
+
 </div>
   </div>
 </template>
@@ -89,6 +90,16 @@ export default {
         }
     },
     computed:{
+        saleBorderClass(){
+           return  this.selectedRobot.head.onSale ?
+           'sale-border' : ''
+        },
+        headBorderStyle(){
+            return {
+                border: this.selectedRobot.head.onSale ? 
+                '3px solid red' :
+                '3px solid #aaa'}
+        },
         selectedRobot(){
             return{
                 head: availableParts.heads[this.selectedHeadIndex],
@@ -101,10 +112,12 @@ export default {
     },
     methods:{
         addToCart(){
-            const cost = robot.head.cost + robot.leftArm.cost + 
-            robot.torst.cost + robot.rightArm.cost + robot.base.cost
             const robot = this.selectedRobot
+            const cost = robot.head.cost + robot.leftArm.cost + 
+            robot.torso.cost + robot.rightArm.cost + robot.base.cost   
             this.cart.push(Object.assign({}, robot, {cost}))
+            console.log('Add to Cart')
+            console.log(this.cart)
         },
         selectNextHead(){
             this.selectedHeadIndex=
@@ -183,7 +196,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .part {
   position: relative;
@@ -297,6 +310,14 @@ td, th{
     text-align:left;
     padding: 5px;
     padding-right:20px
+}
+
+.cost{
+    text-align: right
+}
+
+.sale-border{
+    border: 3px solid red;
 }
 
 

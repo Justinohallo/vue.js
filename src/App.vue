@@ -10,7 +10,6 @@
   </nav>
 </header>
 <main>
-         <!-- <HomePage/> -->
         <RobotBuilder/>
    </main>
   </div>
@@ -32,6 +31,12 @@ body{
   background:linear-gradient(to bottom, #555, #999);
   background-attachment: fixed
 }
+
+</style>
+
+
+<style scoped>
+
 #app {
 margin: 0 auto;
 padding: 30px;
