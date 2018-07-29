@@ -1,9 +1,7 @@
 <template>
  <div class="content">
          <div class="preview">
-             <CollapsibleSection>
-             Hey
-             </CollapsibleSection>
+            
              <CollapsibleSection>
       <div class="preview-content">
         <div class="top-row">
